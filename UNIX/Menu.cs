@@ -1,4 +1,4 @@
-﻿using Il2CppInterop.Runtime.Injection;
+using Il2CppInterop.Runtime.Injection;
 using MelonLoader;
 using System;
 using UnityEngine;
@@ -13,7 +13,7 @@ namespace UNIX
     public class Menu : MelonMod
     {
         bool MainMenu = false;
-        public override void OnEarlyInitializeMelon()
+        public override void OnInitializeMelon()
         {
             //Clear
             ClearLog();
@@ -52,6 +52,8 @@ namespace UNIX
                 }
                 GUI.Label(new Rect(10f, 60f, 200f, 60f), $"Name: {ObjectName}");
                 GUI.Label(new Rect(10f, 80f, 200f, 60f), $"Position: {ObjectPosition}");
+                SendLog(Level.INFO, $"Name: {ObjectName}");
+                SendLog(Level.INFO, $"Position: {ObjectPosition}");
 
                 //Editor
                 Base_UI.Window("UNIX | Editor", new Rect(200f, 0f, 127f, 290f));
@@ -83,6 +85,7 @@ namespace UNIX
 
                         ourCamera.transform.position = Camera.main.transform.position;
                         ourCamera.transform.rotation = Camera.main.transform.rotation;
+                        SendLog(Level.WARNING, "FreeCam Running!");
                     }
                 }
 
@@ -92,6 +95,7 @@ namespace UNIX
                     {
                         GameObject.Destroy(ourCamera);
                         InFreeCam = false;
+                        SendLog(Level.WARNING, "FreeCam Stoped!");
                     }
                 }
 
@@ -166,7 +170,6 @@ namespace UNIX
         GameObject obj;
         string ObjectName = "None";
         Vector3 ObjectPosition = new Vector3(0, 0, 0);
-        string ToEdit = "None";
 
         bool InFreeCam;
         Camera ourCamera;
@@ -175,4 +178,3 @@ namespace UNIX
         public float speed = 6f;
     }
 }
-
