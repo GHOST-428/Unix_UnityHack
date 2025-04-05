@@ -1,0 +1,50 @@
+D:\New\SN HACK 2019\bin\Release\Exaton.dll
+D:\New\SN HACK 2019\bin\Release\Exaton.pdb
+D:\New\SN HACK 2019\bin\Release\Assembly-CSharp.dll
+D:\New\SN HACK 2019\bin\Release\Il2CppInterop.Runtime.dll
+D:\New\SN HACK 2019\bin\Release\Il2Cppmscorlib.dll
+D:\New\SN HACK 2019\bin\Release\Il2CppPhotonRealtime.dll
+D:\New\SN HACK 2019\bin\Release\MelonLoader.dll
+D:\New\SN HACK 2019\bin\Release\UnityEngine.CoreModule.dll
+D:\New\SN HACK 2019\bin\Release\UnityEngine.dll
+D:\New\SN HACK 2019\bin\Release\UnityEngine.IMGUIModule.dll
+D:\New\SN HACK 2019\bin\Release\UnityEngine.InputLegacyModule.dll
+D:\New\SN HACK 2019\bin\Release\UnityEngine.InputModule.dll
+D:\New\SN HACK 2019\bin\Release\UnityEngine.Physics2DModule.dll
+D:\New\SN HACK 2019\bin\Release\UnityEngine.PhysicsModule.dll
+D:\New\SN HACK 2019\bin\Release\UnityEngine.UI.dll
+D:\New\SN HACK 2019\bin\Release\UnityEngine.UIElementsModule.dll
+D:\New\SN HACK 2019\bin\Release\UnityEngine.UIModule.dll
+D:\New\SN HACK 2019\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+D:\New\SN HACK 2019\obj\Release\Exaton.csproj.AssemblyReference.cache
+D:\New\SN HACK 2019\obj\Release\Exaton.csproj.CoreCompileInputs.cache
+D:\New\SN HACK 2019\obj\Release\Exaton.csproj.Up2Date
+D:\New\SN HACK 2019\obj\Release\Exaton.dll
+D:\New\SN HACK 2019\obj\Release\Exaton.pdb
+D:\New\SN HACK 2019\bin\Release\0Harmony.dll
+D:\New\SN HACK 2019\bin\Release\Unity.TextMeshPro.dll
+D:\New\ExatonWare\bin\Release\Exaton.dll
+D:\New\ExatonWare\bin\Release\Exaton.pdb
+D:\New\ExatonWare\bin\Release\0Harmony.dll
+D:\New\ExatonWare\bin\Release\Assembly-CSharp.dll
+D:\New\ExatonWare\bin\Release\Il2CppInterop.Runtime.dll
+D:\New\ExatonWare\bin\Release\Il2Cppmscorlib.dll
+D:\New\ExatonWare\bin\Release\Il2CppPhotonRealtime.dll
+D:\New\ExatonWare\bin\Release\MelonLoader.dll
+D:\New\ExatonWare\bin\Release\Unity.TextMeshPro.dll
+D:\New\ExatonWare\bin\Release\UnityEngine.CoreModule.dll
+D:\New\ExatonWare\bin\Release\UnityEngine.dll
+D:\New\ExatonWare\bin\Release\UnityEngine.IMGUIModule.dll
+D:\New\ExatonWare\bin\Release\UnityEngine.InputLegacyModule.dll
+D:\New\ExatonWare\bin\Release\UnityEngine.InputModule.dll
+D:\New\ExatonWare\bin\Release\UnityEngine.Physics2DModule.dll
+D:\New\ExatonWare\bin\Release\UnityEngine.PhysicsModule.dll
+D:\New\ExatonWare\bin\Release\UnityEngine.UI.dll
+D:\New\ExatonWare\bin\Release\UnityEngine.UIElementsModule.dll
+D:\New\ExatonWare\bin\Release\UnityEngine.UIModule.dll
+D:\New\ExatonWare\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+D:\New\ExatonWare\obj\Release\Exaton.csproj.AssemblyReference.cache
+D:\New\ExatonWare\obj\Release\Exaton.csproj.CoreCompileInputs.cache
+D:\New\ExatonWare\obj\Release\Exaton.csproj.Up2Date
+D:\New\ExatonWare\obj\Release\Exaton.dll
+D:\New\ExatonWare\obj\Release\Exaton.pdb

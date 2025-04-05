@@ -1,0 +1,2 @@
+D:\New\ExatonWare\obj\Debug\ExatonWare.csproj.AssemblyReference.cache
+D:\New\ExatonWare\obj\Debug\ExatonWare.csproj.CoreCompileInputs.cache
