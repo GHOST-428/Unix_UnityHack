@@ -4,5 +4,5 @@
 
 # Functions
 ### ⚪ GameObject Inspector
-### ⚪ Destoy, Clone, Teleport Object to you, Teleport you to Object the target GameObject
+### ⚪ Destoy, Clone, Teleport Object to you, you to the GameObject
 ### ⚪ FreeCam and FullBright
