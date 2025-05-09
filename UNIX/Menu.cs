@@ -1,11 +1,7 @@
-using Il2CppInterop.Runtime.Injection;
 using MelonLoader;
-using System;
 using UnityEngine;
 using UNIX_Fixer;
 using static UNIX_Log.Logger;
-using System.IO;
-using System.Diagnostics.Tracing;
 using System.Collections.Generic;
 
 namespace UNIX
@@ -15,15 +11,14 @@ namespace UNIX
         bool MainMenu = false;
         public override void OnInitializeMelon()
         {
-            //Clear
             ClearLog();
 
-            //Welcom information
-            SendLog(Level.MESSAGE, "Welcome to UNIX");
-            SendLog(Level.INFO, "Version: 1.3");
-            SendLog(Level.INFO, "Devoloper: BigBrain_Z");
+            SendLog(Level.SPACE, null);
 
-            //Space
+            SendLog(Level.MESSAGE, "Welcome to UNIX");
+            SendLog(Level.INFO, "Version: 1.4");
+            SendLog(Level.INFO, "Devoloper: HikuraMukuyami");
+
             SendLog(Level.SPACE, null);
         }
 
@@ -31,13 +26,13 @@ namespace UNIX
         {
             if (Input.GetKeyDown(KeyCode.Insert))
             {
-                this.MainMenu = !this.MainMenu;
+                MainMenu = !MainMenu;
             }
         }
 
         public override void OnGUI()
         {
-            GUI.Label(new Rect(900, 0, 100, 60), "<color=magenta>[UNIX]: [1.3]</color>");
+            GUI.Label(new Rect(900, 0, 100, 60), "<color=magenta>[UNIX]: [1.4]</color>");
 
             if (MainMenu == true)
             {
@@ -46,14 +41,25 @@ namespace UNIX
                 GUI.Label(new Rect(10, 30, 200, 100), "HotKey: F1");
                 if (Input.GetKeyDown(KeyCode.F1))
                 {
-                    obj = InspectorUnity.GetInspect_GameObject();
-                    ObjectName = obj.name;
-                    ObjectPosition = obj.transform.position;
+                    if (Button_patcher.Button_fixer())
+                    {
+                        obj = InspectorUnity.GetInspect_GameObject();
+                        ObjectName = obj.name;
+                        ObjectPosition = obj.transform.position;
+                        ObjectTag = obj.tag;
+
+                        SendLog(Level.SPACE, null);
+
+                        SendLog(Level.INFO, $"Name: {ObjectName}");
+                        SendLog(Level.INFO, $"Position: {ObjectPosition}");
+                        SendLog(Level.INFO, $"Tag: {ObjectTag}");
+
+                        SendLog(Level.SPACE, null);
+                    }
                 }
                 GUI.Label(new Rect(10f, 60f, 200f, 60f), $"Name: {ObjectName}");
                 GUI.Label(new Rect(10f, 80f, 200f, 60f), $"Position: {ObjectPosition}");
-                SendLog(Level.INFO, $"Name: {ObjectName}");
-                SendLog(Level.INFO, $"Position: {ObjectPosition}");
+                GUI.Label(new Rect(10f, 100f, 200f, 60f), $"Tag: {ObjectTag}");
 
                 //Editor
                 Base_UI.Window("UNIX | Editor", new Rect(200f, 0f, 127f, 290f));
@@ -70,6 +76,34 @@ namespace UNIX
                         GameObject CloneObject = GameObject.Instantiate(obj);
                         CloneObject.transform.position = obj.transform.position + obj.transform.forward;
                         CloneObject.AddComponent<Rigidbody>();
+                    }
+                }
+
+                if (Base_UI.Button("Teleport Obj", Base_UI.NormalButtonSize, 3f))
+                {
+                    if (Button_patcher.Button_fixer())
+                    {
+                        if (!InFreeCam)
+                        {
+                            obj.transform.position = Camera.main.transform.position;
+                            obj.transform.rotation = Camera.main.transform.rotation;
+                        }
+                        else
+                        {
+                            obj.transform.position = ourCamera.transform.position;
+                            obj.transform.rotation = ourCamera.transform.rotation;
+                        }
+                    }
+                }
+
+                if (Base_UI.Button("Teleport Me", Base_UI.NormalButtonSize, 4f))
+                {
+                    if (Button_patcher.Button_fixer())
+                    {
+                        if (InFreeCam)
+                        {
+                            ourCamera.transform.position = obj.transform.position;
+                        }
                     }
                 }
 
@@ -150,31 +184,17 @@ namespace UNIX
             }
         }
 
-        public static GameObject[] FindObjectsByName(string name)
-        {
-            GameObject[] allObjects = GameObject.FindObjectsOfType<GameObject>();
-            List<GameObject> matchingObjects = new List<GameObject>();
 
-            foreach (GameObject obj1 in allObjects)
-            {
-                if (obj1.name == name)
-                {
-                    matchingObjects.Add(obj1);
-                }
-            }
-
-            return matchingObjects.ToArray();
-        }
-
-        
         GameObject obj;
         string ObjectName = "None";
         Vector3 ObjectPosition = new Vector3(0, 0, 0);
+        string ObjectTag = "None";
+        List<GameObject> objects = new List<GameObject>();
 
-        bool InFreeCam;
-        Camera ourCamera;
+        public static bool InFreeCam;
+        public static Camera ourCamera;
         public float yaw;
         public float pitch;
-        public float speed = 6f;
+        public float speed;
     }
 }
